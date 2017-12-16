@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Examen1.Models.VACAS>
+@{
+             
+
+                ViewData["Title"] = "Listado";
+}
+
+<h2>Listado de Vacas</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+    <th>DIIO</th>
+    <th>Nombre</th>
+    <th>Sexo</th>
+    <th>Raza</th>
+    <th>Edad</th>
+    <th>Tipo</th>
+    <th>Rebaño</th>
+    <th>Ver</th>
+    </thead>
+    <tbody>
+        @foreach (Examen1.Models.VACAS v in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => v.diio)</td>
+                <td>@Html.DisplayFor(m => v.nombre)</td>
+                <td>@Html.DisplayFor(m => v.sexo)</td>
+                <td>@Html.DisplayFor(m => v.raza)</td>
+                <td>@Html.DisplayFor(m => v.edad)</td>
+                <td>@Html.DisplayFor(m => v.tipo)</td>
+                <td>@Html.DisplayFor(m => v.rebaño)</td>
+                <td>@Html.ActionLink("Visualizar", "Ficha", new { diio = v.diio })</td>
+            </tr>
+}
+
+    </tbody>
+</table>
+
